@@ -25,10 +25,33 @@
         android:text="MyApp Menu"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="{user name}" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="{user name}" />
+
+        <TextView
+            android:id="@+id/mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/mode_spinner"
+            android:text="Mode" />
+
+        <Spinner
+            android:id="@+id/mode_spinner"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/mode"
+            android:layout_alignParentRight="true"
+            android:background="@android:drawable/btn_dropdown"
+            android:clickable="true"
+            android:entries="@array/drop_down_menu"
+            android:spinnerMode="dropdown" />
+    </RelativeLayout>
 
 </LinearLayout>

@@ -42,4 +42,9 @@
         completions."
     </string>
     <string name="title_activity_main">MainActivity</string>
+
+    <string-array name="drop_down_menu">
+        <item>Admin</item>
+        <item>User</item>
+    </string-array>
 </resources>
