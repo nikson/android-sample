@@ -1,6 +1,7 @@
 package com.github.nikson.mobile.myapp;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -24,8 +25,8 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         MyItemFragment.OnMyItemFragmentInteractionListener {
 
-    @Bind(R.id.fab)
-    FloatingActionButton fab;
+    @Bind(R.id.toolbar)
+    Toolbar toolbar;
 
     @Bind(R.id.drawer_layout)
     DrawerLayout drawer;
@@ -37,10 +38,9 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         ButterKnife.bind(this);
+        setSupportActionBar(toolbar);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -79,11 +79,6 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @OnClick(R.id.fab)
-    void OnClickFab(View view) {
-        Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show();
-    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -104,7 +99,11 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
+
+        } else if (id == R.id.nav_test1) {
             fragment = MyItemFragment.newInstance();
+        } else if (id == R.id.nav_test2) {
+            startActivity(new Intent(this, FriendListActivity.class));
         }
 
         if (fragment != null) {

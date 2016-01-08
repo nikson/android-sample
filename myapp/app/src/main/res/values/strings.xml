@@ -47,4 +47,5 @@
         <item>Admin</item>
         <item>User</item>
     </string-array>
+    <string name="title_activity_friend_list">Friend List</string>
 </resources>
